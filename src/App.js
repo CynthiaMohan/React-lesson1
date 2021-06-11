@@ -1,10 +1,16 @@
+import { Switch, Route } from 'react-router-dom';
 import Drawer from './components/Drawer.js';
+import AboutComponent from './components/About.js';
+import Home from './components/Home.js';
 
-
-function App() {
+export default function App() {
   return (
-    <Drawer />
+    <Drawer>
+      <Switch>
+        <Route path='/about' component={AboutComponent} />
+        <Route path='/' component={Home} />
+      </Switch>
+    </Drawer>
   );
 };
 
-export default App;
